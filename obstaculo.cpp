@@ -1,9 +1,11 @@
 #include "obstaculo.h"
+#include <stdlib.h> 
 
 void PosicionarObstaculos(TipoEntero PosicionX, TipoEntero PosicionY )
 {
         int k = 0;
-        while(k < obstaculos)
+        int filas, columnas;
+        while(k < Obstaculo)
         {
                 PosicionX = rand() % filas;
                 PosicionY = rand() % columnas;
