@@ -7,7 +7,6 @@ typedef char TipoCaracter;
 const int FILAS = 10;
 const int COLUMNAS = 10;
 
-template <typename T> 
 class TMatriz {
   private:
     TipoEntero filas;
