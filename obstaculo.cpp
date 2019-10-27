@@ -1,18 +1,18 @@
 #include "obstaculo.h"
 
-void PosicionarObstaculos()
+void PosicionarObstaculos(TipoEntero PosicionX, TipoEntero PosicionY )
 {
         int k = 0;
         while(k < obstaculos)
         {
-                int x = rand() % filas;
-                int y = rand() % columnas;
-                if(x!=3 and y!=2){
+                PosicionX = rand() % filas;
+                PosicionY = rand() % columnas;
+                if(PosicionX!=3 and y!=2){
                   if(x!=9 and y!=0){
-                    if(matriz[x][y] != "⛰")
+                    if(matriz[PosicionX][PosicionY ] != "⛰")
                     {
                         k++;
-                        matriz[x][y] = "⛰";
+                        matriz[PosicionX][PosicionY ] = "⛰";
                      }
                     }
                   }
