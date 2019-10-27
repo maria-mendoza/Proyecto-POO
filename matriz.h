@@ -24,5 +24,5 @@ class TMatriz {
     void AdicionarObstaculos(Obstaculo* obstaculos);
     void Mostrar(TipoCaracter **arena);
     void DibujarMatrizNueva(TipoCaracter **arena );
-
+}
 
