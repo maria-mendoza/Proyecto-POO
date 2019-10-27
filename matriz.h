@@ -7,13 +7,13 @@ typedef char TipoCaracter;
 const int FILAS = 10;
 const int COLUMNAS = 10;
 
-template <template T>
+template <typename T>
 class TMatriz {
   private:
     TipoEntero filas;
     TipoEntero columnas;
     TipoCaracter **arena;
-    TipoEntero CantObstaculos
+    TipoEntero CantObstaculos;
     Obstaculo **obstaculos =nullptr;
   void MatrizNueva(TipoEntero _filas, TipoEntero _columnas);
    
