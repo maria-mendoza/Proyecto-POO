@@ -3,7 +3,7 @@
 class Obstaculo{
   private: 
     TipoEntero PosicionX;
-    TipoEntero PosicionY
+    TipoEntero PosicionY;
   public:
     void PosicionarObstaculos(TipoEntero PosicionX, TipoEntero PosicionY);  
-}
+};
