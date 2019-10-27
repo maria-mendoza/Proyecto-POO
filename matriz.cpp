@@ -10,7 +10,7 @@ TMatriz::TMatriz(): filas{FILAS}, columnas{COLUMNAS} {
    MatrizNueva(TipoEntero _filas, TipoEntero _columnas) ;
 }
 
-TMatriz::TMatriz(TipoEntero _filas, TipoEntero _columnas): filas {_filas,}, columnas {_columnas}, CantObstaculos{0} {
+TMatriz::TMatriz(TipoEntero _filas, TipoEntero _columnas): filas {_filas,}, columnas {_columnas}, CantObstaculos{28} {
         MatrizNueva(TipoEntero filas, TipoEntero columnas) ;  
 }
 
@@ -34,5 +34,29 @@ void TMatriz:: AdicionarObstaculos(Obstaculo* obstaculos) {
 }
   
 
-void ImprimirObstaculos();
-void DibujarMatriz();
+void TMatriz:: DibujarMatrizNueva(TipoCaracter **arena )
+{
+      for(int i=0; i < filas; i++)
+        {
+           for(int j=0; j < columnas; j++)
+            {
+                arena[i][j] = "0";
+                }
+        }
+        arena[3][2]="🚦";
+        arena[9][0]="🏁";
+}
+
+ 
+void TMatriz:: Mostrar(TipoCaracter **arena)
+{
+    
+        for(int i=0; i < filas; i++)
+        {      
+        for(int j=0; j < columnas; j++)
+                {
+                        cout << arena[i][j] << " ";
+                }
+                cout << endl;
+        }
+}
