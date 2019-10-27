@@ -22,7 +22,7 @@ class TMatriz {
     TMatriz(TipoEntero _filas, TipoEntero _columnas);
     TMatriz virtual ~TMatriz();
     void AdicionarObstaculos()(Obstaculo* obstaculos);
-    void ImprimirObstaculos();
-    void DibujarMatriz();
+    void Mostrar(TipoCaracter **arena);
+    void DibujarMatrizNueva(TipoCaracter **arena );
 
 
