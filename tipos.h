@@ -1,4 +1,4 @@
-#ifindef
+#ifndef
 
 #include <iostream>
 #include <cstdlib>
