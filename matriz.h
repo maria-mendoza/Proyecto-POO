@@ -1,9 +1,5 @@
-#ifindef
+#include "obstaculo.h"
 
-#include <iostream>
-#include <cstdlib>
-
-using namespace std;
 typedef int TipoEntero;
 typedef char TipoCaracter;
 
@@ -29,4 +25,4 @@ class TMatriz {
     void ImprimirObstaculos();
     void DibujarMatriz();
 
-  #endif
+
