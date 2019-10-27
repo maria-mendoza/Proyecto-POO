@@ -5,5 +5,5 @@ class Obstaculo{
     TipoEntero PosicionX;
     TipoEntero PosicionY
   public:
-    PosicionarObstaculos(TipoEntero PosicionX, TipoEntero PosicionY);  
+    void PosicionarObstaculos(TipoEntero PosicionX, TipoEntero PosicionY);  
 }
