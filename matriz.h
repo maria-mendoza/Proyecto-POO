@@ -20,7 +20,6 @@ class TMatriz {
    
   public:
   TMatriz();
-  (TipoEntero altura, TipoEntero ancho);
   TMatriz virtual ~TMatriz();
   void AdicionarObstaculos()(Obstaculo* obstaculos);
   void ImprimirObstaculos();
