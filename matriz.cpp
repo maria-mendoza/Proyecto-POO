@@ -1,14 +1,22 @@
 #include "matriz.h"
 
-void TMatriz::TMatriz(): {
-CBattleBox::CBattleBox(): m_CantRobots{0}, 
-  m_Altura{ALTURA}, m_Ancho{ANCHO}  {
-  /*m_Plano = new TipoCaracter*[m_Altura];
-  for (size_t i = 0; i < m_Altura; ++i)
-    m_Plano[i] = new TipoCaracter[m_Ancho];*/ 
-    resizePlano(m_Altura,m_Ancho) ;
+TMatriz::TMatriz(): filas{FILAS}, columnas{COLUMNAS} {
+  
+  string matriz[filas][columnas];
+
+  for(int i=0; i < filas; i++)
+        {
+                for(int j=0; j < columnas; j++)
+                {
+                        matriz[i][j] = "0";
+                }
+        }
+        matriz[3][2]="🚦";
+        matriz[9][0]="🏁";
 }
-(TipoEntero altura, TipoEntero ancho);
+
+
+  
 TMatriz virtual ~TMatriz();
 void AdicionarObstaculos()(Obstaculo* obstaculos);
 void ImprimirObstaculos();
