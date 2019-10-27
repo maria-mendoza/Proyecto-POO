@@ -7,8 +7,8 @@ using namespace std;
 typedef int TipoEntero;
 typedef char TipoCaracter;
 
-const int filas = 10;
-const int columnas = 10;
+const int FILAS = 10;
+const int COLUMNAS = 10;
 
 template <typename T> 
 class TMatriz {
