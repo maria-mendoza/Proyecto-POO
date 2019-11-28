@@ -1,62 +1,67 @@
 #include "matriz.h"
 
-void TMatriz:: MatrizNueva(TipoEntero _filas, TipoEntero _columnas){
-    arena = new TipoCaracter*[_filas];
-    for (size_t i = 0; i < _filas; ++i)
-      arena[i] = new TipoCaracter[_columnas];  
+
+using namespace std;
+TMatriz::TMatriz(TipoEntero _filas, TipoEntero _columnas ) {
+    filas=_filas;
+    columnas=_columnas;
+
+}
+void TMatriz::Liberar(TipoEntero _filas, TipoEntero _columnas){
+    //liberacion de memoria dinamica
+    {
+        for (int i = 0; i < _filas; i++) {
+            delete [] arena[i];
+        }
+        delete [] arena;
+        arena = nullptr;
+
     }
-
-TMatriz::TMatriz(): filas{FILAS}, columnas{COLUMNAS} {
-   MatrizNueva(TipoEntero _filas, TipoEntero _columnas) ;
 }
+void TMatriz::MatrizNueva(TipoEntero _filas, TipoEntero _columnas){
+    //reserva de memoria
+    const string fichero = "mapas.txt";
 
-TMatriz::TMatriz(TipoEntero _filas, TipoEntero _columnas): filas {_filas,}, columnas {_columnas}, CantObstaculos{28} {
-        MatrizNueva(TipoEntero filas, TipoEntero columnas) ;  
-}
-
-TMatriz virtual ~TMatriz() {
-  for (size_t i = 0; i < filas; ++i) {
-    delete[] arena[i];
-  }
-  delete[] arena;
-  arena = nullptr;
-}
-
-void TMatriz:: AdicionarObstaculos(Obstaculo* obstaculos) {
-  Obstaculo** temp = new Obstaculo*[CantObstaculos + 1];
-  for (size_t i  = 0; i < CantObstaculos; ++i)
-    temp[i] = obstaculos[i];
-  temp[obstaculos] = Obstaculo;
-
-  delete [] obstaculos ;
-  obstaculos = temp;
-  obstaculos++;
-}
-  
-
-void TMatriz:: DibujarMatrizNueva(TipoCaracter **arena )
-{
-      for(int i=0; i < filas; i++)
-        {
-           for(int j=0; j < columnas; j++)
-            {
-                arena[i][j] = "0";
-                }
-        }
-        arena[3][2]="🚦";
-        arena[9][0]="🏁";
-}
-
- 
-void TMatriz:: Mostrar(TipoCaracter **arena)
-{
+    arena = new TipoEntero*[_filas];
+    for (size_t i = 0; i < _filas; ++i)
+        arena[i] = new TipoEntero[_columnas];
+    fstream fi;
+    srand(time(nullptr));
+    int num=0;
+    string a= "99";
+    fi.open(fichero);
     
-        for(int i=0; i < filas; i++)
-        {      
-        for(int j=0; j < columnas; j++)
-                {
-                        cout << arena[i][j] << " ";
-                }
-                cout << endl;
+    
+    
+//llenar
+
+
+}
+
+void TMatriz::Mostrar(TipoEntero _filas, TipoEntero _columnas) {
+
+    //imprimir
+    for(int i=0; i < filas; i++)
+    {
+        for(int j=0; j < columnas; j++){   
+        if (i==9 && j==0){
+            char letras[]={"F"};
+            cout<<"  F ";
+            arena[i][j]= letras[0];
         }
+        else if(i==3 && j==2){
+            char letras[]={"X"};
+            cout<<"  X ";
+            arena[i][j]= letras[0];
+        }
+        else{
+        
+          cout <<setw(3)<< arena[i][j] << " ";
+        
+          
+        }
+            
+    }cout <<setw(3)<< endl;
+}
+
 }
