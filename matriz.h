@@ -1,28 +1,27 @@
-#include "obstaculo.h"
-
-typedef int TipoEntero;
-typedef char TipoCaracter;
-
-
-const int FILAS = 10;
-const int COLUMNAS = 10;
-
-template <typename T>
+#ifndef PROYECTONATMAR_MATRIZ_H
+#define PROYECTONATMAR_MATRIZ_H
+#include "tipos.h"
 class TMatriz {
-  private:
+private:
     TipoEntero filas;
     TipoEntero columnas;
-    TipoCaracter **arena;
-    TipoEntero CantObstaculos;
-    Obstaculo **obstaculos =nullptr;
-  void MatrizNueva(TipoEntero _filas, TipoEntero _columnas);
-   
-  public:
-    TMatriz();
-    TMatriz(TipoEntero _filas, TipoEntero _columnas);
-    TMatriz virtual ~TMatriz();
-    void AdicionarObstaculos(Obstaculo* obstaculos);
-    void Mostrar(TipoCaracter **arena);
-    void DibujarMatrizNueva(TipoCaracter **arena );
-}
+    TipoEntero **arena;
+    // TipoEntero CantObstaculos;
+    //Obstaculo **obstaculos =nullptr;
 
+public:
+    TMatriz(TipoEntero _filas, TipoEntero _columnas);
+
+    void MatrizNueva(TipoEntero _filas, TipoEntero _columnas);
+    void Liberar (TipoEntero _filas, TipoEntero _columnas);
+    void Mostrar(TipoEntero _filas, TipoEntero _columnas);
+    TipoEntero ** getplano() {return arena;}
+    TipoEntero **getmatriz(){return arena;}
+    //void DibujarMatrizNueva(TipoCaracter **arena );
+    //TMatriz virtual ~TMatriz();
+    //void AdicionarObstaculos(Obstaculo* obstaculos);
+    friend class mapas;
+    friend class MenuPrincipalMapas;
+};
+
+#endif //PROYECTONATMAR_MATRIZ_H
