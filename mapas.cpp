@@ -36,3 +36,4 @@ void mapas::LLenar (TipoEntero filas, TipoEntero columnas , TMatriz matt ){
     }
     else cerr<<"Error de lectura\n";
 }
+
